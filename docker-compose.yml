@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  mongodb:
+    image: mongo
+    container_name: my-mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: mydb
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: VRuAd2Nvmp4ELHh5
+    volumes:
+      - ./template_data.json:/docker-entrypoint-initdb.d/template_data.json:ro
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    command: mongod --bind_ip_all
