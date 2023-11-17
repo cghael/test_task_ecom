@@ -1,29 +1,23 @@
 [
     {
         "name": "ClientForm",
-        "fields": {
-            "user_name": "text",
-            "user_email": "email",
-            "register_date": "date",
-            "phone_number": "phone"
-        }
+        "user_name": "text",
+        "user_email": "email",
+        "register_date": "date",
+        "phone_number": "phone"
     },
     {
         "name": "Order Form",
-        "fields": {
-            "customer_name": "text",
-            "customer_phone": "phone",
-            "customer_email": "email",
-            "order_date": "date",
-            "product_description": "text"
-        }
+        "customer_name": "text",
+        "customer_phone": "phone",
+        "customer_email": "email",
+        "order_date": "date",
+        "product_description": "text"
     },
     {
         "name": "Feedback Form",
-        "fields": {
-            "participant_name": "text",
-            "feedback_date": "date",
-            "comments": "text"
-        }
+        "participant_name": "text",
+        "feedback_date": "date",
+        "comments": "text"
     }
 ]

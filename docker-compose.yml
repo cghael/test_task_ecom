@@ -1,6 +1,7 @@
-version: '3'
+version: '3.8'
 
 services:
+
   mongodb:
     image: mongo
     container_name: my-mongodb
@@ -15,3 +16,19 @@ services:
       - ./template_data.json:/docker-entrypoint-initdb.d/template_data.json:ro
       - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
     command: mongod --bind_ip_all
+
+  flask_app:
+    container_name: my-flask-app
+    build:
+      context: ./app
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      DEBUG: True
+      MONGO_CONNECTION: mongodb://admin:VRuAd2Nvmp4ELHh5@my-mongodb:27017/mydb
+      HOST: 0.0.0.0
+      PORT: 8000
+    depends_on:
+      - mongodb
+    command: python app.py
