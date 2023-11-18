@@ -46,7 +46,11 @@ Clone the repository
 git clone git@github.com:cghael/test_task_ecom.git
 cd test_task_ecom
 ```
-Run the script
+To start the service, enter the command
+```
+docker-compose up -d
+```
+For test requests run the script
 ```commandline
 ./run_tests.sh
 ```
